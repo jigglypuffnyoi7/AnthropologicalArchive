@@ -3,35 +3,16 @@ import Section from './Section';
 
 import { useEffect } from 'react';
 
-const Article = (props: any) => {
+const Article = ({ articleData } : any) => {  
 
-  
-
-  useEffect(() => {
-    getArticle();
-  }, [])
-
-  
-
-  
-
-  const getArticle = async () => {
-  const response = await fetch('http://localhost:3000/article/view/Snacks')
-  const data = await response.json()
-  console.log(data)
-  }
-
-  useEffect(() => {
-    getArticle();
-  }, [])
+   let contentArr = [];
+   
+   articleData.content ? contentArr = JSON.parse(articleData?.content) : contentArr = []
 
 
-    const Cobj = {
-        heading: 'why i like snacks',
-        text: 'they are very good and tastey'
-    }
 
 
+    console.log(contentArr);
 
     type ContentObj = {
         heading: String,
@@ -39,7 +20,8 @@ const Article = (props: any) => {
     }
 
 
-    const sections = [Cobj].map((obj: ContentObj) => {
+
+    const sections = contentArr.map((obj: ContentObj) => {
         return (
         <div>
           <Section info={obj}/>
@@ -51,7 +33,8 @@ const Article = (props: any) => {
     return (
         <>
           Hi from article component
-          <div className='articleTitle'>{props.title}</div>
+          <div className='articleTitle'>{articleData.title}</div>
+          <div className='articleAuthor'>{articleData.author}</div>
           {sections}
         </>
     )

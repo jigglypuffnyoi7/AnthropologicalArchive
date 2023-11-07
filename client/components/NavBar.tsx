@@ -20,9 +20,7 @@ const NavBar = () => {
             <li>
               <Link to={`newarticle`}>Add Article</Link>
             </li>
-            <li>
-              <Link to={`article`}>View Article</Link>
-            </li>
+
           </ul>
         </nav>
         </>
@@ -31,3 +29,7 @@ const NavBar = () => {
 
 
 export default NavBar;
+
+{/* <li>
+<Link to={`article`}>View Article</Link>
+</li> */}
