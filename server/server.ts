@@ -1,11 +1,13 @@
 import express, { Request, Response } from 'express'
+const articleRouter = require('./routers/articleRouter');
+
 const app = express();
 const path = require("path");
 const PORT = 3000;
 app.use(express.json());
 
 
-
+app.use('/article', articleRouter);
 
 
 
