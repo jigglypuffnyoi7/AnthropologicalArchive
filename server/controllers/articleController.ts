@@ -26,11 +26,11 @@ const articleController = {
         
         try{
             const data = await db.query(query, [title]);
-            console.log('data', data.rows)
+            console.log('data', data.rows[0])
             // const result = await data.json();
             // console.log('result', result)
 
-            res.locals.article = data.rows;
+            res.locals.article = data.rows[0];
             return next();
         } catch (err) {
             return next(err);

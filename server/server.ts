@@ -9,7 +9,7 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors())
 
-app.use('/article', articleRouter);
+app.use('/api/article', articleRouter);
 
 
 
@@ -21,9 +21,9 @@ app.use('/article', articleRouter);
 app.use(express.static(path.resolve(__dirname, "./dist")))
 
 
-app.use("/", (req: Request, res: Response) => {
-    return res.send("the server works!!")
-})
+// app.use("/", (req: Request, res: Response) => {
+//     return res.send("the server works!!")
+// })
 //unknown path handler
 app.use("*", (req: Request, res: Response) => {
     return res.status(404).send("404 page does not exist");

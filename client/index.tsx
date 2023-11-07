@@ -30,7 +30,7 @@ const router = createBrowserRouter([
                  element: <MakePageForm/>
              },
              {
-                path: `article`,
+                path: `article/:title`,
                 element: <ArticleContainer/>
              }
         ]
