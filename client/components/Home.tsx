@@ -2,6 +2,7 @@ import React from 'react';
 import Article from './Article';
 import MakePageForm from './MakePageForm';
 import { useState, useEffect } from 'react';
+import Link from 'react-router-dom';
 
 const Home = () => {
 const [titles, setTitles] = useState<string[]>([])
@@ -20,6 +21,19 @@ const [content, setContent] = useState<string[]>([])
   }, [])
 
   console.log(titles)
+    // query to get names all the name of articles
+    const response = ['snacks', 'temperature', 'relay race']
+
+
+
+    const ArticleLinks = response.map(title => {
+        return (
+            <li>{title}
+              {/* <Link to={`${title}`}>{title}</Link>  */}
+            </li>
+        )
+    })
+
 
     return(
         <>
@@ -30,8 +44,10 @@ const [content, setContent] = useState<string[]>([])
       {titles}<br></br>
       {/* {content} */}
       
-          <Article/>
-          <MakePageForm/>
+          <ul>
+            {ArticleLinks}
+          </ul>
+          
         </>
     )
 };
