@@ -46,7 +46,7 @@ module.exports = {
     devServer: {
         hot: true,
         proxy: {
-            '/tickets': 'http://localhost:3000',
+            '/api': 'http://localhost:3000',
         },
         static: {
             publicPath: '/',
