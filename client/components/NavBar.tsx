@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { title } from 'process';
 
 
 const NavBar = () => {
@@ -25,6 +26,7 @@ const NavBar = () => {
     if (text.length) {
       const newSug: string[] = [];
       titles.forEach((title) => {
+        console.log(title)
         if(title.toLowerCase().includes(text.toLowerCase())){
           newSug.push(title);
         } 
