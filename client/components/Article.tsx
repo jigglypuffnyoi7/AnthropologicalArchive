@@ -34,6 +34,7 @@ const Article = ({ articleData } : any) => {
     return (
         <>
           <h1 className='articleTitle'>{articleData.title}</h1>
+          <button>edit</button>
           <h2 className='articleAuthor'>{articleData.author}</h2>
           {sections}
         </>
