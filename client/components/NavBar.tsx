@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { title } from 'process';
-
+import { Box, Grid, Typography, AppBar, Toolbar, Button } from '@mui/material';
 
 const NavBar = () => {
   const [text, setText] = useState('');
@@ -38,7 +38,7 @@ const NavBar = () => {
   useEffect(() => giveSuggestion(), [text])
 
 
-  const suggestionComponents = suggestions.map(word => <span><Link to={`article/${word}`}>{word}</Link> <br/></span>)
+  const suggestionComponents = suggestions.map(word => <div><Link to={`article/${word}`}>{word}</Link> <br/></div>)
 
 
 
@@ -51,27 +51,35 @@ const NavBar = () => {
 
     return (
         <>
-          <nav>
-          <ul>
-            <li>
-              CS LORE
-            </li>
-            <li>
-              <input type="text" onChange={onChangeHandler} value={text} name='search'/>
-              <label htmlFor='search'>search</label><br/>
+        <Box>
+        <AppBar position='static' style={{ backgroundColor: 'transparent', marginBottom:'10px', height: '100%' }}>
+  <Toolbar style={{height:'100%'}}>
+    
+  <Link to={`/`}><img src="images/cslogo.ico" style={{ height: '5vh', color: 'white' }} /></Link>
+      <Typography sx={{ fontWeight: 'bolder', fontSize: '25px', color: 'rgba(19, 51, 124)', marginLeft: '10px' }}>
+        <Link to={`/`} style={{fontWeight: 'bolder', fontSize:'30px'}}>CSPedia</Link>
+        <Typography sx={{ fontSize: '15px', color: 'rgba(19, 51, 124)', marginLeft: '7px', marginTop: '-4px' }}>Codesmith Lore</Typography>
+
+      </Typography>
+      <Typography sx={{ marginLeft: '20px' }}>
+        <Link to={`newarticle`} style={{fontSize: '20px', fontWeight: 'bold'}}>Add Article</Link>
+      </Typography>
+      <Typography sx={{ marginLeft: '20px' }}>
+        <Link to={`/all`} style={{fontSize: '20px', fontWeight: 'bold'}}>Browse All Articles</Link>
+      </Typography>
+      <Typography sx={{ marginLeft: '20px' }}>
+        <div style={{ position: 'relative' }}>
+          <input  type="text" onChange={onChangeHandler} value={text} name="Search" placeholder="Search CSPEDIA" style={{padding: '2px'}}/>
+          {suggestionComponents && (
+            <div className="dropdown" style={{ position: 'absolute', top: '100%', zIndex: 999, background: 'lightgray', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: '5px' }}>
               {suggestionComponents}
-            </li>
-             <li>
-              <Link to={`/`}>Home</Link>
-            </li>
-            <li>
-              <Link to={`newarticle`}>Add Article</Link>
-            </li>
-            <li>
-              <Link to={`/all`}>Browse All Articles</Link>
-            </li>
-          </ul>
-        </nav>
+            </div>
+          )}
+        </div>
+      </Typography>
+  </Toolbar>
+</AppBar>
+</Box>
         </>
     )
 }

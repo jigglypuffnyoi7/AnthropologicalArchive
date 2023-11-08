@@ -8,6 +8,7 @@ import Home from './components/Home';
 import MakePageForm from './components/MakePageForm';
 import ArticleContainer from './components/ArticleContainer';
 import '../style.css';
+import EditingPage from './components/Editing';
 
 const NavbarWrapper = () => {
     return (
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
              {
                 path: `/article/:title`,
                 element: <ArticleContainer/>
+             },
+             {
+                path: `/edit/:title`,
+                element: <EditingPage/>
              }
         ]
     }

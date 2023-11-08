@@ -33,15 +33,15 @@ console.log('this the param', param.true)
     const ArticleLinks = shown.map(title => {
         if (param.true === 'all'){ 
             return ( //all titles
-                <li id={title}>
+                <div className='allarticles' id={title}>
                   <Link to={`/article/${title}`}>{title}</Link> 
-                </li>
+                </div>
             )
           } else {
             return ( //random selection of titles
-              <p id={title}>
-                <Link to={`/article/${title}`}><b>{title}</b></Link> <br/> <hr/>
-              </p>
+              <div className ='homearticles' id={title}>
+                <Link to={`/article/${title}`}><b>{title}</b></Link> <br/> 
+              </div>
             )
         }
     })
@@ -49,12 +49,16 @@ console.log('this the param', param.true)
 
     return(
         <>
+        <div className='homepage'>
+          <h1 style={{fontSize: '85px', marginBottom: '-5px', textAlign: 'center'}}> Welcome to the Single Source of Truth for Codesmith Lore </h1>
+          <h2 style={{fontSize: '45px'}}> An Encloypedia of Codesmith</h2>
+          {(param.true !== 'all') && <p style={{fontSize:'25px'}}> Click a Random Article Below to Learn More About Codesmith</p>}
 
-    <h1>HELLO WORLD</h1>
-    <p>THIS IS A HELLO WORLD STATEMENT</p>
-          <ul>
             {ArticleLinks}
-          </ul>    
+            </div> 
+            <img src='images/jigglypuff.webp'></img>
+            <img src='images/jigglypuff12.png'></img>
+            <img src='images/pikachu.png' style={{width:'30%'}}></img>
         </>
     )
 };

@@ -1,8 +1,11 @@
 import React from 'react';
 import Section from './Section';
 import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
-const Article = ({ articleData } : any) => {  
+
+const Article = ({ articleData } : any) => { 
+  const navigate = useNavigate(); 
 
    let contentArr = [];
    
@@ -24,19 +27,36 @@ const Article = ({ articleData } : any) => {
         return (
         <div>
           {/* <Section info={obj}/> */}
-          <h1>{obj.heading}</h1>
-          <p>{obj.text}</p>
+          <h2>{obj.heading}</h2>
+          <p style={{fontSize: '25px'}}>{obj.text}</p>
+          <hr></hr>
         </div>
         )
     })
 
+    const onEditClick = () => {
+       navigate(`/edit/${articleData.title}`)
+    }
+
 
     return (
         <>
-          <h1 className='articleTitle'>{articleData.title}</h1>
-          <button>edit</button>
-          <h2 className='articleAuthor'>{articleData.author}</h2>
+        <div className='article-container'>
+          <div className='article'>
+          <div className='articleTitle'>
+            <h1 className='articleh1'>{articleData.title}</h1> 
+            <p className='articleauthor'>By {articleData.author}</p>
+
+
+          
+          </div>
+         
           {sections}
+          <div>
+          <button className='submitform'onClick={onEditClick} style={{marginTop:'20px', marginBottom: '20px'}}>Edit Page Content</button>
+          </div>
+          </div>
+        </div>
         </>
     )
 };
