@@ -56,9 +56,9 @@ console.log('this the param', param.true)
 
             {ArticleLinks}
             </div> 
-            <img src='jigglypuff.webp'></img>
-            <img src='jigglypuff12.png'></img>
-
+            <img src='images/jigglypuff.webp'></img>
+            <img src='images/jigglypuff12.png'></img>
+            <img src='images/pikachu.png' style={{width:'30%'}}></img>
         </>
     )
 };
