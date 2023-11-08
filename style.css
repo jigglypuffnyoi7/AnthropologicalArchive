@@ -1,11 +1,18 @@
-* {
-    background-color: aqua;
-}
+/* body{
+    background-color: black;
+} */
 
 .articleTitle {
     font-size: 34pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
+.articleh1{
+    margin-bottom: -30px;
+}
 
 .sectionHeading {
     font-size: 22pt;
@@ -14,3 +21,75 @@
 .sectionText {
     font-size: 12pt;
 }
+
+
+a:link { text-decoration: none; color: rgba(19, 51, 124); }
+
+
+a:visited { text-decoration: none; color: rgba(19, 51, 124);  }
+
+.allarticles{
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.formsubmit label{
+    font-size: 45px;
+    margin-right: 5px;
+    width: 100px; /* Adjust the width as needed to create space between label and input */
+
+}
+
+.formsubmit label input {
+    margin-left: 5px;
+    height: 100%;
+    flex: 1; /* Allow input to take up remaining space */
+
+    font-size: 15px;
+}
+
+.formsubmit{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+
+button{
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.addsection{
+    margin-top: 10px;
+    font-size: 17px;
+    background-color: rgba(19, 51, 124);
+    color: white
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px; /* Add margin for spacing */
+  }
+
+  .formsubmit2{
+    border: 1px solid black
+  }
+
+  .article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+

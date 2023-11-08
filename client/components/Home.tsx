@@ -33,9 +33,9 @@ console.log('this the param', param.true)
     const ArticleLinks = shown.map(title => {
         if (param.true === 'all'){ 
             return ( //all titles
-                <li id={title}>
+                <div className='allarticles' id={title}>
                   <Link to={`/article/${title}`}>{title}</Link> 
-                </li>
+                </div>
             )
           } else {
             return ( //random selection of titles
@@ -49,9 +49,6 @@ console.log('this the param', param.true)
 
     return(
         <>
-
-    <h1>HELLO WORLD</h1>
-    <p>THIS IS A HELLO WORLD STATEMENT</p>
           <ul>
             {ArticleLinks}
           </ul>    

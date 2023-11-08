@@ -33,10 +33,19 @@ const Article = ({ articleData } : any) => {
 
     return (
         <>
-          <h1 className='articleTitle'>{articleData.title}</h1>
+        <div className='article-container'>
+          <div className='article'>
+          <div className='articleTitle'>
+            <h1 className='articleh1'>{articleData.title}</h1> 
+            <p>{articleData.author}</p>
+
+          
+          </div>
           <button>edit</button>
-          <h2 className='articleAuthor'>{articleData.author}</h2>
+
           {sections}
+          </div>
+          </div>
         </>
     )
 };
