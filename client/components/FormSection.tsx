@@ -21,10 +21,10 @@ const FormSection = (props: any) => {
     return (
         <div id={`form$${props.id}`} onSubmit={props.submitNewPageInfo}>
           <label>Header: 
-            <input value={neededObj.header} id={`input1$${props.id}`} type="text" onChange={props.changeHeader}/>
+            <input value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={props.changeHeader}/>
           </label>
           <label>Content: 
-            <input value={neededObj.content} id={`input2$${props.id}`} type="text" onChange={props.changeContent}/>
+            <input value={neededObj.text} id={`input2$${props.id}`} type="text" onChange={props.changeContent}/>
           </label>
         </div>
     )
