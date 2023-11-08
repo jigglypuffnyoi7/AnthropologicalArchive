@@ -31,17 +31,18 @@ console.log('this the param', param.true)
       : shown = titles.sort((a, b):number => Math.random() - .5 ).slice(0, NUM_OF_TITLES);
 
     const ArticleLinks = shown.map(title => {
-
-        if (param.true === 'all'){
-          return (
-              <div className='allarticles' id={title}>
-                <Link to={`/article/${title}`}>{title}</Link> 
-              </div>
-          )
+        if (param.true === 'all'){ 
+            return ( //all titles
+                <div className='allarticles' id={title}>
+                  <Link to={`/article/${title}`}>{title}</Link> 
+                </div>
+            )
           } else {
-              return (
-                  <>our rando articles</>
-              )
+            return ( //random selection of titles
+              <p id={title}>
+                <Link to={`/article/${title}`}><b>{title}</b></Link> <br/> <hr/>
+              </p>
+            )
         }
     })
 

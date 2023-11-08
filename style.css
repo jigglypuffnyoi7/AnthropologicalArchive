@@ -4,8 +4,15 @@
 
 .articleTitle {
     font-size: 34pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
+.articleh1{
+    margin-bottom: -30px;
+}
 
 .sectionHeading {
     font-size: 22pt;
@@ -73,3 +80,16 @@ button{
   .formsubmit2{
     border: 1px solid black
   }
+
+  .article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+
