@@ -50,12 +50,12 @@ const EditingPage = () => {
         // some form with that data in it
         return (
             <div className='formsubmit2'>
-          <label>Header:
-            <input value={obj.heading} id={`h${i}`} onChange={onChangeHandler} type="text" />
-          </label>
-          <label>Content: 
-            <input value={obj.text} id={`t${i}`} onChange={onChangeHandler} type="text" />
-          </label>
+          <p>Header: </p>
+            <input className='header'value={obj.heading} id={`h${i}`} onChange={onChangeHandler} type="text" />
+        
+          <p>Content: </p>
+            <input className='header' value={obj.text} id={`t${i}`} onChange={onChangeHandler} type="text" />
+          
         </div>
         )
     })
@@ -113,10 +113,10 @@ const EditingPage = () => {
           </div>
              {editFields}
           </div>
-          <button onClick={addSection}>Add Section</button>
-          <button onClick={deleteSection}>Delete Section</button>
+          <button className='submitform' style={{marginTop:'15px'}}onClick={addSection}>Add Section</button>
+          <button className ='submitform' style={{marginLeft:'10px', marginTop: '15px'}}onClick={deleteSection}>Delete Section</button>
           <br/>
-          <button onClick={sendPost}>Submit Edit</button>
+          <button className='submitform' onClick={sendPost}>Submit Edit</button>
         </div>
     )
 }

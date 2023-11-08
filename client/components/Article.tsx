@@ -50,8 +50,9 @@ const Article = ({ articleData } : any) => {
 
           
           </div>
-          <button onClick={onEditClick}>edit</button>
-
+          <div>
+          <button className='submitform'onClick={onEditClick} style={{marginTop:'20px', marginBottom: '20px'}}>Edit Page Content</button>
+          </div>
           {sections}
           </div>
         </div>
