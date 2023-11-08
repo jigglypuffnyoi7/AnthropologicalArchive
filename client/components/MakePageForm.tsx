@@ -59,6 +59,7 @@ const MakePageForm = () => {
     
   
     // console.log('sectionFormsLength', allContent)
+    const newContentState = [...allContent];
 
     changeAllContents();
 
@@ -82,8 +83,8 @@ const MakePageForm = () => {
     console.log('newContentState', newContentState)
     newContentState[index].header = event.target.value;
     console.log('newcontent', newContentState)
-    setAllContent(newContentState);
-    setSections([...sections, <FormSection changeContent={changeContent} changeAllContents={changeAllContents} allContent={allContent} submitNewPageInfo={submitNewPageInfo} changeTitle={changeTitle} changeHeader={changeHeader} id={sectionFormsLength} value={allContent}/>]);
+    // setAllContent(newContentState);
+    setSections([...sections, <FormSection changeContent={changeContent} changeAllContents={changeAllContents} allContent={allContent} submitNewPageInfo={submitNewPageInfo} changeTitle={changeTitle} changeHeader={changeHeader} id={sectionFormsLength} />]);
 
   }
 
@@ -97,10 +98,10 @@ const MakePageForm = () => {
 
     const newContentState = [...allContent];
     newContentState[index].content = event.target.value;
-    setAllContent(newContentState);
+    // setAllContent(newContentState);
 
     
-    setSections([...sections, <FormSection changeContent={changeContent} changeAllContents={changeAllContents} allContent={allContent} submitNewPageInfo={submitNewPageInfo} changeTitle={changeTitle} changeHeader={changeHeader} id={sectionFormsLength} value={allContent}/>]);
+    setSections([...sections, <FormSection changeContent={changeContent} changeAllContents={changeAllContents} allContent={allContent} submitNewPageInfo={submitNewPageInfo} changeTitle={changeTitle} changeHeader={changeHeader} id={sectionFormsLength} />]);
 
   }
 
