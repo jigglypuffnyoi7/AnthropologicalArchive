@@ -6,21 +6,50 @@ const FormSection = (props: any) => {
     // useEffect(props.changeAllContents, []);
     // useEffect(props.changeAllContents, [])
 
-  // console.log('in formsection', props.allContent, props.id, props.allContent[Number(props.id) - 1].header)
+  console.log('in formsection', props.allContent, props.id, props.allContent[Number(props.id)], props.allContent[Number(props.id)].heading)
 
   
+  function changeHeader(event: React.ChangeEvent<HTMLInputElement>){
+    event.preventDefault();
+    // const sectionFormsLength = allContent.length;
+    const sectionFormsLength = props.allContent.length;
 
-    const neededObj = props.allContent[Number(props.id) - 1]
+    const inputId = event.target.id 
+    let index: any = Number(inputId.split('$')[1]);
+    console.log(index)
+
+    const newContentState = [...props.allContent];
+    console.log('newContentState', newContentState)
+    newContentState[index].heading = event.target.value;
+    console.log('newcontent', newContentState)
+    props.setAllContent(newContentState);
+   
+  }
+
+  function changeContent(event: React.ChangeEvent<HTMLInputElement>){
+    event.preventDefault();
+    const sectionFormsLength = props.allContent.length;
+
+    const inputId = event.target.id
+    // const index: any = inputId.split('$')[1];
+    let index: any = Number(inputId.split('$')[1]);
+
+    const newContentState = [...props.allContent];
+    newContentState[index].text = event.target.value;
+    props.setAllContent(newContentState);
+
+  }
+
+
+    const neededObj = props.allContent[Number(props.id)]
     
-
-
     return (
-        <div className='formsubmit2' id={`form$${props.id}`} onSubmit={props.submitNewPageInfo}>
+        <div className='formsubmit2' id={`form$${props.id}`}>
           <label>Header: 
-            <input value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={props.changeHeader}/>
+            <input value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={changeHeader}/>
           </label>
           <label>Content: 
-            <input value={neededObj.text} id={`input2$${props.id}`} type="text" onChange={props.changeContent}/>
+            <input value={neededObj.text} id={`input2$${props.id}`} type="text" onChange={changeContent}/>
           </label>
         </div>
     )
