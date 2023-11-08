@@ -168,13 +168,14 @@ const MakePageForm = () => {
 
     return(
       <>
+      <div className='formsubmit-container'>
       <div className='formsubmit'>
         <form onSubmit={submitNewPageInfo}>
         <form>
           <label>Title: 
             <input required type="text" onChange={changeTitle}/>
           </label>
-          <label>Author: 
+          <label className='author'>Author: 
             <input type="text" onChange={changeAuthor}/>
           </label>
           <button className ='addsection' onClick={addSection}>Add Section</button>
@@ -187,9 +188,9 @@ const MakePageForm = () => {
        
 
         {sections}
+        <button className='submitform'onClick={sendPost}>Submit</button>
+
         </div>
-        <div>
-        <button onClick={sendPost}>Submit</button>
         </div>
       </>
         

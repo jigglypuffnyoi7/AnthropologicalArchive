@@ -39,9 +39,9 @@ console.log('this the param', param.true)
             )
           } else {
             return ( //random selection of titles
-              <p id={title}>
-                <Link to={`/article/${title}`}><b>{title}</b></Link> <br/> <hr/>
-              </p>
+              <div className ='homearticles' id={title}>
+                <Link to={`/article/${title}`}><b>{title}</b></Link> <br/> 
+              </div>
             )
         }
     })
@@ -49,9 +49,15 @@ console.log('this the param', param.true)
 
     return(
         <>
-          <ul>
+        <div className='homepage'>
+          <h1 style={{fontSize: '85px', marginBottom: '-5px', textAlign: 'center'}}> Welcome to the Single Source of Truth for Codesmith Lore </h1>
+          <h2 style={{fontSize: '45px'}}> An Encloypedia of Codesmith</h2>
+          <p style={{fontSize:'25px'}}> Click a Random Article Below to Learn More About Codesmith</p>
             {ArticleLinks}
-          </ul>    
+            </div> 
+            <img src='jigglypuff.webp'></img>
+            <img src='jigglypuff12.png'></img>
+
         </>
     )
 };

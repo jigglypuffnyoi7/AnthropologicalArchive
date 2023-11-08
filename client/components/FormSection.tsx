@@ -20,12 +20,10 @@ const FormSection = (props: any) => {
 
     return (
         <div className='formsubmit2' id={`form$${props.id}`} onSubmit={props.submitNewPageInfo}>
-          <label>Header: 
-            <input value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={props.changeHeader}/>
-          </label>
-          <label>Content: 
-            <input value={neededObj.text} id={`input2$${props.id}`} type="text" onChange={props.changeContent}/>
-          </label>
+          <p>Enter Header:</p>
+            <input className = 'header' placeholder='Title of Section'value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={props.changeHeader}/>
+          <p> Enter Content:</p>
+            <textarea className='content' placeholder='Section Description' value={neededObj.text} id={`input2$${props.id}`}  onChange={props.changeContent}/>
         </div>
     )
 }

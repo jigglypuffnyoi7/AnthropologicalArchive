@@ -27,8 +27,9 @@ const Article = ({ articleData } : any) => {
         return (
         <div>
           {/* <Section info={obj}/> */}
-          <h1>{obj.heading}</h1>
-          <p>{obj.text}</p>
+          <h2>{obj.heading}</h2>
+          <p style={{fontSize: '25px'}}>{obj.text}</p>
+          <hr></hr>
         </div>
         )
     })
@@ -44,7 +45,7 @@ const Article = ({ articleData } : any) => {
           <div className='article'>
           <div className='articleTitle'>
             <h1 className='articleh1'>{articleData.title}</h1> 
-            <p>{articleData.author}</p>
+            <p className='articleauthor'>By {articleData.author}</p>
 
           
           </div>

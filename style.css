@@ -43,20 +43,28 @@ a:visited { text-decoration: none; color: rgba(19, 51, 124);  }
 }
 
 .formsubmit label input {
-    margin-left: 5px;
+    margin-left: 15px;
     height: 100%;
     flex: 1; /* Allow input to take up remaining space */
 
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .formsubmit{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     flex-direction: column;
     padding: 10px;
     
+}
+
+.formsubmit-container{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20%;
+    margin-top: 20px;
 }
 
 button{
@@ -68,7 +76,8 @@ button{
     margin-top: 10px;
     font-size: 17px;
     background-color: rgba(19, 51, 124);
-    color: white
+    color: white;
+    margin-left: 15px;
 }
 
 .form-group {
@@ -78,7 +87,23 @@ button{
   }
 
   .formsubmit2{
-    border: 1px solid black
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+  }
+
+  .formsubmit2 p{
+    font-size: 25px;
+  }
+
+ 
+
+  .content{
+    height: 70px;
+    width: 400px;
+    font-size: 20px;
   }
 
   .article-container {
@@ -93,3 +118,36 @@ button{
     align-items: left;
   }
 
+  .author{
+    margin-left: 20px
+  }
+
+  .submitform{
+    font-size: 17px;
+    background-color: rgba(19, 51, 124);
+    color: white
+  }
+
+  .header{
+    font-size: 18px;
+  }
+
+  .articleauthor{
+    font-size: 25px;
+    margin-top: 45px;
+  }
+
+  .homearticles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .homepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
