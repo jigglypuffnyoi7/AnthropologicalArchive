@@ -34,9 +34,9 @@ console.log('this the param', param.true)
 
         if (param.true === 'all'){
           return (
-              <li id={title}>
+              <div className='allarticles' id={title}>
                 <Link to={`/article/${title}`}>{title}</Link> 
-              </li>
+              </div>
           )
           } else {
               return (
@@ -48,9 +48,6 @@ console.log('this the param', param.true)
 
     return(
         <>
-
-    <h1>HELLO WORLD</h1>
-    <p>THIS IS A HELLO WORLD STATEMENT</p>
           <ul>
             {ArticleLinks}
           </ul>    

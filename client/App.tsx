@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 const App = () => {
     return (
         <>
-          <div style={{color: 'red'}}>HELLO WORLD FROM APP</div>
+          
           <NavBar/>
         </>
     )

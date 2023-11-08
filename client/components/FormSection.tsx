@@ -19,7 +19,7 @@ const FormSection = (props: any) => {
 
 
     return (
-        <div id={`form$${props.id}`} onSubmit={props.submitNewPageInfo}>
+        <div className='formsubmit2' id={`form$${props.id}`} onSubmit={props.submitNewPageInfo}>
           <label>Header: 
             <input value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={props.changeHeader}/>
           </label>
