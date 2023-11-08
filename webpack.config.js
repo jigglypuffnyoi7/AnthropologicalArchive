@@ -44,8 +44,9 @@ module.exports = {
         extensions: ['.jsx', '.js', '.tsx', '.ts']
     },
     devServer: {
+        hot: true,
         proxy: {
-            '/tickets': 'http://localhost:3000',
+            '/api/': 'http://localhost:3000',
         },
         static: {
             publicPath: '/',
