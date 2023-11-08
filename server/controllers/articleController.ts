@@ -26,7 +26,7 @@ const articleController = {
         
         try{
             const data = await db.query(query, [title]);
-            console.log('data', data.rows[0])
+            // console.log('data', data.rows[0])
             // const result = await data.json();
             // console.log('result', result)
 
@@ -50,8 +50,7 @@ const articleController = {
         
         try{
             const data = await db.query(query, values);
-            console.log('data: ', data);
-    
+            // console.log('data: ', data);
             return next();
         }catch(err){
             return next(err);
@@ -65,8 +64,20 @@ const articleController = {
 
         try{
             const data = await db.query(query, values);
-            console.log('data: ', data);
+            // console.log('data: ', data);
     
+            return next();
+        }catch(err){
+            return next(err);
+        }
+    },
+
+    deleteArticle: async function(req: Request, res: Response, next: NextFunction) {
+        const query = 'DELETE FROM articles WHERE title = $1'
+        const { title } = req.body;
+
+        try{
+            await db.query(query, [title]);
             return next();
         }catch(err){
             return next(err);
