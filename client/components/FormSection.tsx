@@ -26,7 +26,7 @@ const FormSection = (props: any) => {
    
   }
 
-  function changeContent(event: React.ChangeEvent<HTMLInputElement>){
+  function changeContent(event: React.ChangeEvent<HTMLTextAreaElement>){
     event.preventDefault();
     const sectionFormsLength = props.allContent.length;
 
@@ -52,7 +52,6 @@ const FormSection = (props: any) => {
 
         </div>
     )
-}
-
+    }
 export default FormSection;
 
