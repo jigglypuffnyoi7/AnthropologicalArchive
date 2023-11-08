@@ -61,7 +61,14 @@ const EditingPage = () => {
     })
 
     // have a button to add aseciton
-
+    const addSection = () => {
+        setInputText([...inputText, {heading: '', text: ''}])
+    }
+    const deleteSection = () => {
+        const inputTextCopy = inputText.slice()
+        inputTextCopy.pop();
+        setInputText(inputTextCopy);
+    }
 
     // function to send updating
     async function sendPost(){
@@ -106,6 +113,9 @@ const EditingPage = () => {
           </div>
              {editFields}
           </div>
+          <button onClick={addSection}>Add Section</button>
+          <button onClick={deleteSection}>Delete Section</button>
+          <br/>
           <button onClick={sendPost}>Submit Edit</button>
         </div>
     )
