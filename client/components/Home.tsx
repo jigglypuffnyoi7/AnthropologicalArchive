@@ -53,6 +53,7 @@ console.log('this the param', param.true)
           <h1 style={{fontSize: '85px', marginBottom: '-5px', textAlign: 'center'}}> Welcome to the Single Source of Truth for Codesmith Lore </h1>
           <h2 style={{fontSize: '45px'}}> An Encloypedia of Codesmith</h2>
           <p style={{fontSize:'25px'}}> Click a Random Article Below to Learn More About Codesmith</p>
+
             {ArticleLinks}
             </div> 
             <img src='jigglypuff.webp'></img>

@@ -47,6 +47,7 @@ const Article = ({ articleData } : any) => {
             <h1 className='articleh1'>{articleData.title}</h1> 
             <p className='articleauthor'>By {articleData.author}</p>
 
+
           
           </div>
           <button onClick={onEditClick}>edit</button>
