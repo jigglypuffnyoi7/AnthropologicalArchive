@@ -9,7 +9,7 @@ const Home = () => {
         <>
           Hi from Home component
           <Article/>
-          <MakePageForm/>
+          <MakePageForm />
         </>
     )
 };
