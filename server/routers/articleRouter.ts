@@ -23,4 +23,9 @@ router.put('/update', articleController.updateArticle, (req:Request, res: Respon
     res.status(200).send('Updated successfully')
 })
 
+//route to delete articles
+router.delete('/delete', articleController.deleteArticle, (req:Request, res: Response) => {
+    res.status(200).send('Deleted successfully')
+})
+
 module.exports = router;
