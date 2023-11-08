@@ -23,7 +23,9 @@ const Article = ({ articleData } : any) => {
     const sections = contentArr.map((obj: ContentObj) => {
         return (
         <div>
-          <Section info={obj}/>
+          {/* <Section info={obj}/> */}
+          <h1>{obj.heading}</h1>
+          <p>{obj.text}</p>
         </div>
         )
     })
@@ -31,9 +33,8 @@ const Article = ({ articleData } : any) => {
 
     return (
         <>
-          Hi from article component
-          <div className='articleTitle'>{articleData.title}</div>
-          <div className='articleAuthor'>{articleData.author}</div>
+          <h1 className='articleTitle'>{articleData.title}</h1>
+          <h2 className='articleAuthor'>{articleData.author}</h2>
           {sections}
         </>
     )

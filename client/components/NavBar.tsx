@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { title } from 'process';
 
 
 const NavBar = () => {

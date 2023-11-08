@@ -46,11 +46,12 @@ const articleController = {
     addArticle: async function(req: Request, res: Response, next: NextFunction) {
         const query = 'INSERT INTO articles (title, author, content) VALUES ($1, $2, $3)'
         const { title, author, content } = req.body;
-        const values = [title, author, content]
         
+        const values = [title, author, JSON.stringify(content)]
+        console.log('content', JSON.stringify(content))
         try{
             const data = await db.query(query, values);
-            console.log('data: ', data);
+            // console.log('data: ', data);
     
             return next();
         }catch(err){

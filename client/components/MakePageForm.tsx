@@ -10,8 +10,8 @@ const MakePageForm = () => {
   const [author, setAuthor] = useState<string>('');
 
   const [allContent, setAllContent] = useState([{
-      header: '',
-      content: ''
+      heading: '',
+      text: ''
   }]);
 
   const [sections, setSections] = useState<any>([])
@@ -81,7 +81,7 @@ const MakePageForm = () => {
 
     const newContentState = [...allContent];
     console.log('newContentState', newContentState)
-    newContentState[index].header = event.target.value;
+    newContentState[index].heading = event.target.value;
     console.log('newcontent', newContentState)
     // setAllContent(newContentState);
     setSections([...sections, <FormSection changeContent={changeContent} changeAllContents={changeAllContents} allContent={allContent} submitNewPageInfo={submitNewPageInfo} changeTitle={changeTitle} changeHeader={changeHeader} id={sectionFormsLength} />]);
@@ -97,7 +97,7 @@ const MakePageForm = () => {
     let index: any = Number(inputId.split('$')[1]) - 1;
 
     const newContentState = [...allContent];
-    newContentState[index].content = event.target.value;
+    newContentState[index].text = event.target.value;
     // setAllContent(newContentState);
 
     
@@ -108,12 +108,27 @@ const MakePageForm = () => {
   function changeAllContents(){
     const allContentCopy = allContent.slice()
     allContentCopy.push({
-      header: '',
-      content: ''
+      heading: '',
+      text: ''
     })
     console.log('allContentCopy', allContentCopy)
     setAllContent(allContentCopy);
     return allContent
+  }
+
+  function sendPost(){
+
+    const newContent = allContent;
+    const body = {
+      title: title,
+      author: author,
+      content: allContent
+    }
+    fetch('/api/article/add', {
+      method: 'POST',
+      headers: {'Content-type': 'application/json'},
+      body: JSON.stringify(body)
+    })
   }
 
 
@@ -130,6 +145,8 @@ const MakePageForm = () => {
         </form>
           {sections}
         <button onClick={addSection}>Add Section</button>
+        <button onClick={sendPost}>Submit</button>
+
       </>
         
     )
