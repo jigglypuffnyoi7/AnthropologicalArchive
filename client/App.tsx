@@ -10,7 +10,6 @@ const App = () => {
         <>
           <div style={{color: 'red'}}>HELLO WORLD FROM APP</div>
           <NavBar/>
-
         </>
     )
 }

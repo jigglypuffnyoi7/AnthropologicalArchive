@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <NavbarWrapper/>,
         children:[
              {
-                 path: "/", // yes, again
+                 path: "/:true", 
                  element: <Home/>
              },
              {
