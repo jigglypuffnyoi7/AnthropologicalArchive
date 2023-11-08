@@ -2,11 +2,12 @@ import React from 'react';
 import Article from './Article';
 import MakePageForm from './MakePageForm';
 import { useState, useEffect } from 'react';
-import  { Link } from 'react-router-dom';
+import  { Link, useParams } from 'react-router-dom';
 
 const Home = () => {
-const [titles, setTitles] = useState<string[]>([])
-const [content, setContent] = useState<string[]>([])
+const [titles, setTitles] = useState<string[]>([]);
+const [content, setContent] = useState<string[]>([]);
+const param = useParams();
 
   const getHome = async () => {
     const response = await fetch('/api/article/home')
@@ -18,20 +19,28 @@ const [content, setContent] = useState<string[]>([])
 
   useEffect(() => {
     getHome();
-  }, [])
+  }, [param.true])
 
-  console.log(titles)
-    // query to get names all the name of articles
-    // const response = ['snacks', 'temperature', 'relay race']
+    const NUM_OF_TITLES:number = 4; // hardcoded number of suggested titles
 
+    let shown:string[] = [];
+    (param.true === 'all') 
+      ? shown = titles
+      : shown = titles.sort((a, b):number => Math.random() - .5 ).slice(0, NUM_OF_TITLES);
 
+    const ArticleLinks = shown.map(title => {
 
-    const ArticleLinks = titles.map(title => {
-        return (
-            <li id={title}>
-              <Link to={`article/${title}`}>{title}</Link> 
-            </li>
-        )
+        if (param.true === 'all'){
+          return (
+              <li id={title}>
+                <Link to={`article/${title}`}>{title}</Link> 
+              </li>
+          )
+          } else {
+              return (
+                  <>our rando articles</>
+              )
+        }
     })
 
 
