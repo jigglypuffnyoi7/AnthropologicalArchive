@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import MakePageForm from './components/MakePageForm';
 import ArticleContainer from './components/ArticleContainer';
+import '../style.css';
 
 const NavbarWrapper = () => {
     return (
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
         element: <NavbarWrapper/>,
         children:[
              {
-                 path: "/:true", 
+                 path: "/:true?", 
                  element: <Home/>
              },
              {

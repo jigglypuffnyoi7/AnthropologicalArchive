@@ -9,6 +9,8 @@ const [titles, setTitles] = useState<string[]>([]);
 const [content, setContent] = useState<string[]>([]);
 const param = useParams();
 
+console.log('this the param', param.true)
+
   const getHome = async () => {
     const response = await fetch('/api/article/home')
     //update state 
@@ -33,7 +35,7 @@ const param = useParams();
         if (param.true === 'all'){
           return (
               <li id={title}>
-                <Link to={`article/${title}`}>{title}</Link> 
+                <Link to={`/article/${title}`}>{title}</Link> 
               </li>
           )
           } else {

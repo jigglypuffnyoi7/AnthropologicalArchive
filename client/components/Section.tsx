@@ -9,7 +9,6 @@ const Section = (props: any) => {
 
     return(
         <>
-          Hi from section component
           <div className='sectionHeading'>
             {props.info.heading}
           </div>

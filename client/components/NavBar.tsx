@@ -26,11 +26,11 @@ const NavBar = () => {
     if (text.length) {
       const newSug: string[] = [];
       titles.forEach((title) => {
-        console.log(title)
+      if (title){
         if(title.toLowerCase().includes(text.toLowerCase())){
           newSug.push(title);
         } 
-      })
+    }})
       setSuggestions(newSug);
     } else setSuggestions([]);
   }
