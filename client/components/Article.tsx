@@ -44,7 +44,7 @@ const Article = ({ articleData } : any) => {
           <div className='article'>
           <div className='articleTitle'>
             <h1 className='articleh1'>{articleData.title}</h1> 
-            <p>{articleData.author}</p>
+            <p>by {articleData.author}</p>
 
           
           </div>

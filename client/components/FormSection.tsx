@@ -10,10 +10,6 @@ const FormSection = (props: any) => {
 
   
 
-  
-
-  
-
     const neededObj = props.allContent[Number(props.id) - 1]
     
 
