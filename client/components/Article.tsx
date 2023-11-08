@@ -1,8 +1,11 @@
 import React from 'react';
 import Section from './Section';
 import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
-const Article = ({ articleData } : any) => {  
+
+const Article = ({ articleData } : any) => { 
+  const navigate = useNavigate(); 
 
    let contentArr = [];
    
@@ -30,6 +33,10 @@ const Article = ({ articleData } : any) => {
         )
     })
 
+    const onEditClick = () => {
+       navigate(`/edit/${articleData.title}`)
+    }
+
 
     return (
         <>
@@ -37,15 +44,15 @@ const Article = ({ articleData } : any) => {
           <div className='article'>
           <div className='articleTitle'>
             <h1 className='articleh1'>{articleData.title}</h1> 
-            <p>{articleData.author}</p>
+            <p>by {articleData.author}</p>
 
           
           </div>
-          <button>edit</button>
+          <button onClick={onEditClick}>edit</button>
 
           {sections}
           </div>
-          </div>
+        </div>
         </>
     )
 };

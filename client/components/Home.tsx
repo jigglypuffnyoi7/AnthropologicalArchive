@@ -49,6 +49,8 @@ console.log('this the param', param.true)
 
     return(
         <>
+          <h5 className='sectionHeading'> Welcome to the single source of truth for Codesmith Lore </h5> <br/>
+          <p className='sectionText'> Browse a random article: </p> <br/>
           <ul>
             {ArticleLinks}
           </ul>    
