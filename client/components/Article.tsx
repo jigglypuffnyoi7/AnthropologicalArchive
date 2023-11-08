@@ -1,6 +1,5 @@
 import React from 'react';
 import Section from './Section';
-
 import { useEffect } from 'react';
 
 const Article = ({ articleData } : any) => {  
