@@ -44,13 +44,12 @@ const FormSection = (props: any) => {
     const neededObj = props.allContent[Number(props.id)]
     
     return (
-        <div className='formsubmit2' id={`form$${props.id}`}>
-          <label>Header: 
-            <input value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={changeHeader}/>
-          </label>
-          <label>Content: 
-            <input value={neededObj.text} id={`input2$${props.id}`} type="text" onChange={changeContent}/>
-          </label>
+        <div className='formsubmit2' id={`form$${props.id}`} >
+          <p>Enter Header:</p>
+            <input className = 'header' placeholder='Title of Section'value={neededObj.heading} id={`input1$${props.id}`} type="text" onChange={changeHeader}/>
+          <p> Enter Content:</p>
+            <textarea className='content' placeholder='Section Description' value={neededObj.text} id={`input2$${props.id}`}  onChange={changeContent}/>
+
         </div>
     )
 }

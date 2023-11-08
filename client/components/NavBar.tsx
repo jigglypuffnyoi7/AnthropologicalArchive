@@ -65,7 +65,7 @@ const NavBar = () => {
         <Link to={`newarticle`} style={{fontSize: '20px', fontWeight: 'bold'}}>Add Article</Link>
       </Typography>
       <Typography sx={{ marginLeft: '20px' }}>
-        <Link to={`/all`} style={{fontSize: '19px', fontWeight: 'bold'}}>Browse All Articles</Link>
+        <Link to={`/all`} style={{fontSize: '20px', fontWeight: 'bold'}}>Browse All Articles</Link>
       </Typography>
       <Typography sx={{ marginLeft: '20px' }}>
         <div style={{ position: 'relative' }}>
