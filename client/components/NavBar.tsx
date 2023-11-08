@@ -55,7 +55,7 @@ const NavBar = () => {
         <AppBar position='static' style={{ backgroundColor: 'transparent', marginBottom:'10px', height: '100%' }}>
   <Toolbar style={{height:'100%'}}>
     
-  <Link to={`/`}><img src="cslogo.ico" style={{ height: '5vh', color: 'white' }} /></Link>
+  <Link to={`/`}><img src="images/cslogo.ico" style={{ height: '5vh', color: 'white' }} /></Link>
       <Typography sx={{ fontWeight: 'bolder', fontSize: '25px', color: 'rgba(19, 51, 124)', marginLeft: '10px' }}>
         <Link to={`/`} style={{fontWeight: 'bolder', fontSize:'30px'}}>CSPedia</Link>
         <Typography sx={{ fontSize: '15px', color: 'rgba(19, 51, 124)', marginLeft: '7px', marginTop: '-4px' }}>Codesmith Lore</Typography>
